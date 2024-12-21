@@ -65,15 +65,39 @@ function nextFlashCard() {
   showFlashCard(content);
 }
 
-// MCQ data (40 questions)
+
+// MCQ data (20 questions)
 let mcqQuestions = [
   { question: "Who is the father of modern taxonomy?", options: ["Charles Darwin", "Carolus Linnaeus", "Gregor Mendel", "Jean-Baptiste Lamarck"], correct: "Carolus Linnaeus" },
   { question: "Which rank is broader than genus?", options: ["Species", "Family", "Class", "Order"], correct: "Family" },
   { question: "What does 'monophyletic group' mean?", options: ["Single ancestor", "No ancestor", "Multiple ancestors", "Excluding descendants"], correct: "Single ancestor" },
   { question: "What is a holotype?", options: ["A specimen representing a group", "A typical specimen for a species", "A name for extinct organisms", "An outlier specimen"], correct: "A typical specimen for a species" },
   { question: "What is radial symmetry?", options: ["Body parts around a central axis", "Mirror-image halves", "Asymmetry", "Centralized structure"], correct: "Body parts around a central axis" },
-  // Add more questions here (total 40)
+  { question: "What is the significance of the genus?", options: ["It groups closely related species.", "It indicates fossil ancestry.", "It replaces species-level classification.", "It contains only one organism."], correct: "It groups closely related species." },
+  { question: "What does phylogeny mean?", options: ["Evolutionary history of a species", "The name of a fossil", "A geological term", "A genetic mutation"], correct: "Evolutionary history of a species" },
+  { question: "What is a derived character?", options: ["A trait that arises after a common ancestor", "An ancestral trait", "An unrelated trait", "A non-genetic characteristic"], correct: "A trait that arises after a common ancestor" },
+  { question: "What is a cladogram?", options: ["A diagram of evolutionary relationships", "A fossil record", "A genetic sequence", "A type of organism"], correct: "A diagram of evolutionary relationships" },
+  { question: "What is the largest taxonomic rank?", options: ["Genus", "Kingdom", "Order", "Family"], correct: "Kingdom" },
+  { question: "What is the smallest taxonomic rank?", options: ["Species", "Class", "Family", "Phylum"], correct: "Species" },
+  { question: "Define synapomorphy.", options: ["A shared derived character", "An ancestral trait", "A unique mutation", "A non-genetic characteristic"], correct: "A shared derived character" },
+  { question: "What is diploblastic organization?", options: ["Body with two tissue layers", "Body with three tissue layers", "Body with one tissue layer", "No tissue layers"], correct: "Body with two tissue layers" },
+  { question: "What is triploblastic organization?", options: ["Body with three layers", "Body with two layers", "Body with one layer", "No layers"], correct: "Body with three layers" },
+  { question: "What does radial symmetry mean?", options: ["Symmetry around a central axis", "Mirror-image halves", "No symmetry", "Symmetry along the head-tail axis"], correct: "Symmetry around a central axis" },
+  { question: "What is asymmetry?", options: ["Absence of a central axis", "Mirror-image halves", "Symmetry around a central point", "Directional symmetry"], correct: "Absence of a central axis" },
+  { question: "What is bilateral symmetry?", options: ["Mirror-image halves", "No symmetry", "Symmetry along a central axis", "Symmetry in all directions"], correct: "Mirror-image halves" },
+  { question: "What is the purpose of a phylogenetic tree?", options: ["Show evolutionary lineages", "Display genetic mutations", "Classify fossils", "Identify environmental factors"], correct: "Show evolutionary lineages" },
+  { question: "What is the advantage of bilateral symmetry?", options: ["Directional movement", "Random movement", "Floating ability", "Nutrient absorption"], correct: "Directional movement" },
+  { question: "What is the function of the mesoderm?", options: ["Forms muscles and bones", "Forms skin only", "Forms brain tissue", "No function"], correct: "Forms muscles and bones" },
 ];
+
+// Function to shuffle an array randomly
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
 
 let currentMCQIndex = 0;
 
@@ -81,6 +105,7 @@ let currentMCQIndex = 0;
 function startMCQ() {
   const content = document.getElementById("content");
   currentMCQIndex = 0;
+  mcqQuestions = shuffleArray(mcqQuestions); // Shuffle the questions
   showMCQ(content);
 }
 
