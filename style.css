@@ -1,35 +1,112 @@
+/* General Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Header Styling */
 header {
   background-color: #4caf50;
   color: white;
-  padding: 10px;
+  padding: 15px 10px;
   text-align: center;
 }
 
 header h1 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin: 5px;
 }
 
 header .team {
   font-size: 1rem;
-  margin: 0;
+  margin: 5px;
   font-style: italic;
 }
 
 header .home-btn {
   background-color: white;
   color: #4caf50;
-  border: 1px solid #4caf50;
-  padding: 5px 10px;
-  font-size: 0.9rem;
+  border: 2px dashed #4caf50; /* Updated line style */
+  padding: 8px 15px;
+  font-size: 1rem;
   cursor: pointer;
-  border-radius: 5px;
-  margin-top: 5px;
+  border-radius: 10px;
+  margin-top: 10px;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 header .home-btn:hover {
   background-color: #45a049;
   color: white;
+  transform: scale(1.1);
 }
 
-/* Other styles remain unchanged */
+/* Main Content Styling */
+main {
+  padding: 20px;
+}
+
+.banner-image {
+  width: 80%;
+  height: auto;
+  margin: 20px auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+button {
+  background-color: #ff9800;
+  color: white;
+  border: 2px solid #ff9800; /* Updated line style */
+  padding: 15px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 15px;
+  width: 60%;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #f57c00;
+  transform: scale(1.05);
+}
+
+/* Footer Styling */
+footer {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  border-top: 3px solid #45a049;
+}
+
+/* Additional Styling */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
